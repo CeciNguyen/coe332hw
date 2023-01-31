@@ -12,10 +12,10 @@ sample takes based on its composition.
 How do you run the code? Great question!
 
 To properly run the code:
-	1. Compile the "generate_ sites.py" script in the command line
-	2. In the command line, type "ls" to make sure a JSON file was generated. The file should be called "MarsSyrtisMajor.json".
-	3. Once you can confirm a JSON file was created, compile the "calculate_trip.py" script.
-	4. You should see an output of each leg, which is the segment traveled between each point/ site.
+	1) Compile the "generate_ sites.py" script in the command line
+	2) In the command line, type "ls" to make sure a JSON file was generated. The file should be called "MarsSyrtisMajor.json".
+	3) Once you can confirm a JSON file was created, compile the "calculate_trip.py" script.
+	4) You should see an output of each leg, which is the segment traveled between each point/ site.
 
 Now, what does the output mean? Well, each leg (segment) will have its own seperate travel time and sample time. This tells you how long the robot takes to travel 
 from one site to the next and how long the robot takes to sample based on the composition of the meteorite.
