@@ -12,14 +12,16 @@ within the safe threshold. In the second script, test water analysis, it uses py
 to test its capabilities and accuracy.
 
 In order to run the following files:
-    1) Compile the "water_analysis.py" script in the command line by using the lines
+ 
+ 1) Compile the "water_analysis.py" script in the command line by using the lines
 	"python3 water_analysis.py"
-    2) In the command line, there should be a message describing the turbidity
+ 2) In the command line, there should be a message describing the turbidity
 
 To test the file:
-    1) Compile the "test_water_analysis.py" script in the command line by using the
+ 
+ 1) Compile the "test_water_analysis.py" script in the command line by using the
 	lines "pytest test_water_analysis.py"
-    2) In the command line, the computer should give a detailed message of an error
+ 2) In the command line, the computer should give a detailed message of an error
 	or if the expected value was met
 
 Let's discuss what the results mean! If the message tells you that the turbidity is
