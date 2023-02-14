@@ -2,8 +2,9 @@ Homework 3 - The World Has Turned and Left Me Turbid, Analyzing water data to
 determine the turbidty
 
 In this homework set folder, two scripts were created to use data from an online 
-source to further analyze the safety of water. The objective of this project was to 
-first extract information from an online data base to then manipulate mathematically.
+source to further analyze the safety of water (the source can be referenced with this link:
+ https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json). 
+The objective of this project was to first extract information from an online data base to then manipulate mathematically.
 Then the other file should then test the script for any errors.
 
 In the script, water analysis, the program first extracts data form an online 
