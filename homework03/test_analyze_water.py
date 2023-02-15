@@ -2,15 +2,31 @@ from water_analyzer import calc_turb, calc_min_time
 import pytest
 
 def test_calc_turb():
-    turbDict = [1,2,3,4,5]
-    a0 = 0.23
-    I90 = [0.22, 0.23, 0.24, 0.25, 0.26]
-    expected = 0.239
-    assert calc_turb(turbDict, a0, I90) == expected
+    turbDict = [{"calibration_constant":0.1, "detector_current":1},
+                {"calibration_constant":0.1, "detector_current":2},
+                {"calibration_constant":0.1, "detector_current":3},
+                {"calibration_constant":0.1, "detector_current":4},
+                {"calibration_constant":0.1, "detector_current":5}]
+    expected = 0.3
+    assert float(calc_turb(turbDict, 'calibration_constant', 'detector_current')) == expected
+
+
+def test_calc_turb():
+    turbDict = [{"calibration_constant":0.23, "detector_current":0.22},
+                {"calibration_constant":0.23, "detector_current":0.23},
+                {"calibration_constant":0.23, "detector_current":0.24},
+                {"calibration_constant":0.23, "detector_current":0.25},
+                {"calibration_constant":0.23, "detector_current":0.26}]
+    expected = 0.0552
+    assert float(calc_turb(turbDict, 'calibration_constant', 'detector_current')) == expected
+
 
 def test_calc_min_time():
-    Ts = 1.0
-    T = 1.5
-    d = 0.02
-    expected = 6.67
-    assert calc_min_time(6.67) == expected
+    currTurb = 3
+    expected = 100
+    assert calc_min_time(currTurb) == expected
+
+def test_calc_min_time():
+    currTurb = 6.2
+    expected = 260
+    assert calc_min_time(currTurb) == expected

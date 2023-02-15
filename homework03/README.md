@@ -32,4 +32,8 @@ message tells you that the turbidity is below the safe threshold, that means tha
 there is no need to worry and that the water is safe (this means that the time is 
 equal to zero because it is already in the needed range).
 
+When running the test file, the set values in the file will result in an error. When you look closer to the error, you will see a very small marginal error due to the
+computer's rounding margin. Since the expected calculatios were done by hand, the 
+calculation will not seem as exact as the computer's.
+
 Thank you for grading my homework! 

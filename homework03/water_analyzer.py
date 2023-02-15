@@ -8,9 +8,14 @@ from typing import List
 
 def calc_turb(turbitdata: List[dict], calCon: str, detec: str) -> float:
     """
-    This function does calculates the turbidity using the calibration constant and the degree detector            
-    Args: List, Calibration Constant, Degree detector
-    Returns: the average turbidity
+    This function calculates the turbidity using the calibration constant and the 
+    degree detector from the online data base given.
+
+    Args: List: a list of dictionaries defined from the data base 
+          Calibration Constant: one of the keys defined in the data base
+          Degree detector: another one of the keys defined in the data base
+    
+    Returns: the average turbidity calculated from the five most recent entries
    
     """
     
@@ -21,8 +26,11 @@ def calc_turb(turbitdata: List[dict], calCon: str, detec: str) -> float:
 
 def calc_min_time(currTurb) -> float:
     """
-    This function does determines if the turbidity is within the threshold and then finds the time it takes to get the turbidity below the threshold
+    This function does determines if the turbidity is within the threshold and then 
+    finds the time it takes to get the turbidity below the threshold
+
     Args: the average trubidity found in the first function, or the "currTurb"
+    
     Returns: 0 or the minimum time it takes to get the turbidirty under the threshold
 
     """
