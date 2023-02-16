@@ -8,7 +8,7 @@ def test_calc_turb():
                 {"calibration_constant":0.1, "detector_current":4},
                 {"calibration_constant":0.1, "detector_current":5}]
     expected = 0.3
-    assert float(calc_turb(turbDict, 'calibration_constant', 'detector_current')) == expected
+    assert calc_turb(turbDict, 'calibration_constant', 'detector_current') == pytest.approx(expected)
 
 
 def test_calc_turb():
@@ -18,7 +18,7 @@ def test_calc_turb():
                 {"calibration_constant":0.23, "detector_current":0.25},
                 {"calibration_constant":0.23, "detector_current":0.26}]
     expected = 0.0552
-    assert float(calc_turb(turbDict, 'calibration_constant', 'detector_current')) == expected
+    assert calc_turb(turbDict, 'calibration_constant', 'detector_current') == pytest.approx(expected)
 
 
 def test_calc_min_time():
