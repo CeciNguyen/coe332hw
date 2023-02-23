@@ -55,10 +55,15 @@ So, if you wanted to see the second Epoch data set, you would want to put:
 This will return the data set that belongs to the specific Epoch! You will see something along the lines of:
 
 > X = -5998.4652356788401
+>
 > Y= 391.26194859011099
+>
 > Z = -3164.26047476557
+>
 > X_DOT = -2.8799691318087701
+>
 > Y_DOT = -5.2020406581448801
+>
 > Z_DOT = 4.8323394499086101
 
 4. If you want to see the speed for a specific Epoch in the data set, you can input:
