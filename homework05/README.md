@@ -61,10 +61,15 @@ Since the computer starts printing from index 0, you would want your offset to e
 You will most likely see a list that looks like this:
 
 > [ 
+>
 >  "2023-082T11:48:00.000Z",
+>
 >  "2023-082T11:52:00.000Z",
+>
 >  "2023-082T11:56:00.000Z",
+>
 >  "2023-082T12:00:00.000Z"
+>
 > ]
 
 4. If you want to see the state vectors for a specific Epoch, you can input:
