@@ -165,6 +165,8 @@ and it should return an empty data set.
 
 ``curl localhost:5000/post-data -X POST`` 
 
+This should return an updated data set as a dictionary!
+
 After you delete your data, you need to reload the data using post in order to run the other routes! And just like with the "delete-data" route, you need to make sure to have the ``-X POST`` in the command for the route to do its action.
 
 
