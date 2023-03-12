@@ -22,12 +22,6 @@ def dataset() -> dict:
     This function returns the data set as a dictionary
     """
     global data
-    
-    try:
-        return data
-    except:
-        return "Error! Invalid repsonse :("
-    
     return data
 
 #@app.route('/epochs', methods=['GET'])
