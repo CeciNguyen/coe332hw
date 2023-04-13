@@ -12,6 +12,18 @@ rd = get_redis_client()
 
 @app.route('/data', methods=['POST', 'GET', 'DELETE'])
 def handle_data() -> dict:
+    """
+    This function can retrieve, store, and delete data from the Gene Names data base.
+    Args:
+    This function does not have a set parameter, but the approute can be called with
+    '/data' to retrive and return the whole data set, '/data -X POST' to store the 
+    data set, '/data -X DELETE' to remove the data.
+    Returns:
+    This function will return different outputs. For the GET method, it will return 
+    a dictionary. For the POST method, it will return a message through a string 
+    once the data set has been loaded. For the DELETE method, it will return a 
+    message through a string.
+    """
     if request.method == 'GET':
         output_list = []
         for item in rd.keys():
@@ -34,6 +46,14 @@ def handle_data() -> dict:
 
 @app.route('/genes', methods=['GET'])
 def gethgncID() -> list:
+    """
+    This function can retrieve and return a list of all the HGNC IDs.
+    Args:
+    This function does not have a set parameter, but the approute can be called with
+    '/genes' and return a list of the IDs.
+    Returns:
+    This function will return a list.
+    """
     try:
         rd.keys()
     except KeyError:
@@ -48,6 +68,16 @@ def gethgncID() -> list:
     
 @app.route('/genes/<string:hgnc_id>', methods=['GET'])
 def spefhgncID(hgnc_id:str) -> str:
+    """
+    This function can retrieve a string of information that relates to a specific 
+    HGNC ID that the user inputs.
+    Args:
+    This function does set parameter, <hgnc_id:str>, a string! This is the specific
+    HGNC ID that the user inputs. The app route can be called through
+    'genes/(HGNC ID)' where the ID is inputted as a string.  
+    Returns:
+    This function will return a string.
+    """
     try:
         rd.keys()
     except KeyError:
