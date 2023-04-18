@@ -39,7 +39,7 @@ def handle_data() -> dict:
         return f'data loaded\n'
     
     elif request.method == 'DELETE':
-        redis.flushdb()
+        rd.flushdb()
         return f'data deleted\n'
     else:
         return 'Method not applicable'
