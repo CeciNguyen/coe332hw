@@ -103,12 +103,19 @@ This will return a list with all the HGNC IDs that are in the data set.
 Your output may look something like this:
 
 >  "HGNC:32058",
+>
 >  "HGNC:38032",
+>
 >  "HGNC:25820",
+>
 >  "HGNC:13200",
+>
 >  "HGNC:51695",
+>
 >  "HGNC:29027",
+>
 >  "HGNC:24523"
+>
 > ] 
 
 5. Let's say out of that list, you wanted to see all the information for HGNC:24523.
@@ -119,39 +126,73 @@ Well, you would input this:
 This will return the key data for HGNC:24523!
 
 > "hgnc_id": "HGNC:24523",
+>
 >  "location": "1p31.1",
+>
 >  "location_sortable": "01p31.1",
+>
 >  "locus_group": "protein-coding gene",
+>
 >  "locus_type": "gene with protein product",
+>
 >  "mane_select": [
+>
 >    "ENST00000370801.8",
+>
 >    "NM_015534.6"
+>
 >  ],
+>
 >  "mgd_id": [
+>
 >    "MGI:1920453"
+>
 >  ],
+>
 >  "name": "zinc finger ZZ-type containing 3",
+>
 >  "omim_id": [
+>
 >    "619892"
+>
 >  ],
+>
 >  "pubmed_id": [
+>
 >    16428443,
+>
 >    21304275
+>
 >  ],
+>
 >  "refseq_accession": [
+>
 >    "NM_015534"
+>
 >  ],
+>
 >  "rgd_id": [
+>
 >    "RGD:1565468"
+>
 >  ],
+>
 >  "status": "Approved",
+>
 >  "symbol": "ZZZ3",
+>
 >  "ucsc_id": "uc001dhq.4",
+>
 >  "uniprot_ids": [
+>
 >    "Q8IYH5"
+>
 >  ],
+>
 >  "uuid": "1d5bbcb9-60fe-4686-b543-69375a16e33f",
+>
 >  "vega_id": "OTTHUMG00000009652"
+>
 > }
 
 
