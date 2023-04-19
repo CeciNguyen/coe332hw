@@ -15,6 +15,6 @@ services:
             dockerfile: ./Dockerfile
         depends_on:
             - redis-db
-        image: dcn558/gene_api:1.0
+        image: dcn558/gene_api:2.0
         ports:
             - 5000:5000
