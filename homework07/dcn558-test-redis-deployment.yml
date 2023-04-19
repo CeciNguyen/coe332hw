@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dcn558-test-redis-deployment
+  labels:
+    username: dcn558
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dcn558-test-redis
+  template:
+    metadata:
+      labels:
+        app: dcn558-test-redis
+    spec:
+      containers:
+        - name: deploys
+          image: redis:7
+          command:  
+          volumeMounts:
+          - name: dcn558-test-redis-pvc
+            mountPath: "/data"
+      volumes:
+      - name: dcn558-test-redis-pvc
+        persistentVolumeClaim:
+          claimName: dcn558-test-redis-pvc 
