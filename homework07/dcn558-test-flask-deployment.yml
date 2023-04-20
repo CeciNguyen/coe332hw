@@ -18,10 +18,11 @@ spec:
     spec:
       containers:
         - name: flaskdeploys
-          image: dcn558/gene_api
+          image: dcn558/gene_api:2.0
+          imagePullPolicy: Always
           env:
-          - name: FLASK_APP
-            value: 'gene_api.py'
+          - name: REDIS_IP
+            value: 'dcn558-test-redis-service'
           ports:
           - name: http
             containerPort: 5000
