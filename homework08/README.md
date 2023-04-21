@@ -79,7 +79,7 @@ Python developers can interact with Kubernetes using the Kubernetes Python clien
 ## The Image: How do You Pull it and Run it?
 To install the project, begin by cloning the repository.
 
-Next, pull a copy of the container using the command "docker pull avlavelle/gene_api". Then, execute "docker-compose up --build" to launch the container with the compose file, build the image, and map the appropriate port inside the container to the corresponding port on the host.
+Next, pull a copy of the container using the command "docker pull dcn558/gene_api:2.0". Then, execute "docker-compose up --build" to launch the container with the compose file, build the image, and map the appropriate port inside the container to the corresponding port on the host.
 
 To interact with the routes, open a new terminal window and use the "curl localhost:5000/<route>" command. This will allow you to easily access the desired routes and perform the necessary actions.
 
