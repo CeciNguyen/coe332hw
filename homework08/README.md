@@ -1,4 +1,4 @@
-# Say It Ain't Genes, but in Kubernetes - Homework 07
+# Say It Ain't Genes, but in Kubernetes and an image! - Homework 08
 
 ## Gene Party: Parsing the HGNC Data Set
 This project features a single script that utilizes Flask to create an application with diverse routes, providing users with distinct information pieces about the HGNC data obtained from HUGO. To ease accessibility, the project also includes a Dockerfile enabling users to retrieve and run the image on their personal machines, as well as a Docker-compose file that streamlines the container's launch process.
@@ -65,7 +65,7 @@ using:
 ``docker run -it --rm -p 5000:5000 username/gene_api:<version>``
 6. now you can interface with the container and the code in the other vm window!
  
-## Kubernets and How to Use it
+## Kubernetes and How to Use it
 
 Kubernetes is a container orchestration platform that automates the deployment, scaling, and management of containerized applications. While Kubernetes itself is not specific to Python coding, Python developers can use Kubernetes to deploy and manage their Python applications that have been containerized using tools like Docker.
 
@@ -76,9 +76,36 @@ Python developers can interact with Kubernetes using the Kubernetes Python clien
 3. Use the command "kubectl get services" to obtain the IP address of your Redis service. Replace the current host in the Python script with this new IP address.
 4. Once you've made the necessary changes to the Python script, use the instructions provided above to build a new Docker image from the Dockerfile.
 
-### What are the Different Queries and Their Results?
+## The Image: How do You Pull it and Run it?
+To install the project, begin by cloning the repository.
 
-In this python script, there are five different routes you can experiment with.
+Next, pull a copy of the container using the command "docker pull avlavelle/gene_api". Then, execute "docker-compose up --build" to launch the container with the compose file, build the image, and map the appropriate port inside the container to the corresponding port on the host.
+
+To interact with the routes, open a new terminal window and use the "curl localhost:5000/<route>" command. This will allow you to easily access the desired routes and perform the necessary actions.
+
+## The Image Route
+
+The route helps to read the date of each gene entry of when they were first approved form the database, tabulates how many genes were approved each year, an then creates a bar graph of the data, which it writes into anouther database.
+
+The default GET request for the route allows users to retrieve a plot image from the server. To use this route, the user must provide a name for their plot image when calling the route using the "curl" command. For example, executing the command ``curl localhost:5000/image>>myimage.png`` will create a new plot image named "myimage.png" and make it available in the repository on the VM.
+
+To view the plot image, two scp actions are required. These actions allow the user to securely transfer the image from the server to their local machine. Once the transfer is complete, the user can view the image using their preferred image viewer or editor.
+
+Within your the virtual machine (VM)
+
+``scp ./ <image_name.png> username@address.edu:./``
+
+You should then recieve a confirmation!
+
+After you recieve the confirmation, you can input your local machine: 
+
+``scp username@address.edu:./<image_name.png> ./``
+
+The computer should return confirmation ffor the scp, and you should be able to access the plot image from their file explorer.
+
+## What are the Different Queries and Their Results?
+
+In this python script, there are eight different routes you can experiment with.
 
 1. If you would like to retrieve the data int a Redis database:
 
@@ -204,4 +231,24 @@ This will return the key data for HGNC:24523!
 >  "vega_id": "OTTHUMG00000009652"
 >
 > }
+
+6. If you would like to create the plot image and load it into the Redis
+
+``curl localhost:5000/image -X POST"``
+
+This will give you a message:
+
+> Image created
+
+7. If you want to retrieve the plot:
+
+Follow the instrustions above and this return will not return a visible result.
+
+8. If you would like to remove the image:
+
+``curl localhost:5000/image -X DELETE``
+
+This will return a confirmation message:
+
+> Image deleted, there are 0 keys in the db
 
